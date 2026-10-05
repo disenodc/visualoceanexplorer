@@ -1,8 +1,8 @@
 # 🌊 Visual Ocean Explorer
 
-**Visual Ocean Explorer (VOE)** es un prototipo de investigación que combina **Knowledge Graphs**, **GraphRAG**, **Ontological Intent Parsing** y **selección determinística de visualizaciones** para transformar consultas en lenguaje natural en análisis visuales reproducibles sobre datos de biodiversidad marina. 【1-141d2a】【2-4f9315】
+**Visual Ocean Explorer (VOE)** es un prototipo de investigación que combina **Knowledge Graphs**, **GraphRAG**, **Ontological Intent Parsing** y **selección determinística de visualizaciones** para transformar consultas en lenguaje natural en análisis visuales reproducibles sobre datos de biodiversidad marina.
 
-El sistema fue desarrollado utilizando como caso de estudio la dinámica de varamiento y reproducción de **Mirounga leonina** (Elefante Marino del Sur) en Península Valdés, Argentina, demostrando cómo una consulta en lenguaje natural puede convertirse automáticamente en una consulta SPARQL validada, un conjunto de datos verificado y una visualización científicamente fundamentada. 【2-4f9315】
+El sistema fue desarrollado utilizando como caso de estudio la dinámica de varamiento y reproducción de **Mirounga leonina** (Elefante Marino del Sur) en Península Valdés, Argentina, demostrando cómo una consulta en lenguaje natural puede convertirse automáticamente en una consulta SPARQL validada, un conjunto de datos verificado y una visualización científicamente fundamentada. 
 
 ---
 
@@ -10,7 +10,7 @@ El sistema fue desarrollado utilizando como caso de estudio la dinámica de vara
 
 Los programas de monitoreo marino generan grandes volúmenes de datos heterogéneos distribuidos entre repositorios institucionales, publicaciones científicas, campañas de campo y servicios oceanográficos. Aunque los grafos de conocimiento proporcionan una base semántica para integrar esta información, su consulta suele requerir experiencia en SPARQL.
 
-Visual Ocean Explorer reduce esta barrera mediante una arquitectura de cuatro capas que permite a investigadores interactuar con un Knowledge Graph utilizando únicamente consultas en lenguaje natural. El sistema incorpora mecanismos de validación semántica, control de calidad de datos y generación reproducible de visualizaciones. 【2-4f9315】
+Visual Ocean Explorer reduce esta barrera mediante una arquitectura de cuatro capas que permite a investigadores interactuar con un Knowledge Graph utilizando únicamente consultas en lenguaje natural. El sistema incorpora mecanismos de validación semántica, control de calidad de datos y generación reproducible de visualizaciones. 
 
 ---
 
@@ -45,7 +45,7 @@ Consulta en lenguaje natural
       Visualización Vega-Lite
 ```
 
-Cada capa incorpora controles específicos para garantizar consistencia semántica, trazabilidad y reducción de alucinaciones estructurales. 【2-4f9315】
+Cada capa incorpora controles específicos para garantizar consistencia semántica, trazabilidad y reducción de alucinaciones estructurales. 
 
 ---
 
@@ -84,7 +84,7 @@ La capa GraphRAG realiza:
 - Reparación automática de consultas inválidas.
 - Recuperación de subgrafos contextuales de hasta dos saltos.
 
-Este enfoque evita errores frecuentes observados en sistemas RAG convencionales y mejora la precisión contextual de las respuestas. 【2-4f9315】
+Este enfoque evita errores frecuentes observados en sistemas RAG convencionales y mejora la precisión contextual de las respuestas. 
 
 ---
 
@@ -101,7 +101,7 @@ Verifica que propiedades obligatorias como:
 - `oc:latitude`
 - `oc:longitude`
 
-se encuentren presentes y no sean nulas. 【2-4f9315】
+se encuentren presentes y no sean nulas.
 
 ### 2. Type Conformance
 
@@ -111,7 +111,7 @@ Comprueba:
 - Fechas ISO-8601.
 - Coordenadas geográficas válidas.
 
-【2-4f9315】
+
 
 ### 3. Quality Flag Validation
 
@@ -121,11 +121,11 @@ Filtra observaciones marcadas como:
 - `rejected`
 - `invalid`
 
-para evitar visualizaciones engañosas. 【2-4f9315】
+para evitar visualizaciones engañosas. 
 
 ### 4. Cardinality Profiling
 
-Evalúa el volumen de resultados para recomendar agregaciones o modificar el tipo de visualización cuando existe sobrecarga perceptual. 【2-4f9315】
+Evalúa el volumen de resultados para recomendar agregaciones o modificar el tipo de visualización cuando existe sobrecarga perceptual. 
 
 ---
 
@@ -149,7 +149,7 @@ A diferencia de sistemas que dejan la elección del gráfico a un LLM, VOE utili
 | PartToWhole | Stacked Bar Chart |
 | EntityLookup | Table |
 
-Esta aproximación garantiza que una misma consulta produzca siempre el mismo tipo de visualización, favoreciendo la reproducibilidad científica. 【2-4f9315】
+Esta aproximación garantiza que una misma consulta produzca siempre el mismo tipo de visualización, favoreciendo la reproducibilidad científica. 
 
 ---
 
@@ -166,7 +166,6 @@ La implementación incluye:
 - Visualización de subgrafos mediante D3.js.
 - Contexto geográfico mediante Leaflet y OpenStreetMap.
 
-【1-141d2a】
 
 ---
 
@@ -180,7 +179,7 @@ La implementación incluye:
 
 **Península Valdés, Argentina**
 
-Sitio declarado Patrimonio Mundial por UNESCO y una de las colonias reproductivas más importantes de Elefante Marino del Sur en el Atlántico Sur. 【2-4f9315】
+Sitio declarado Patrimonio Mundial por UNESCO y una de las colonias reproductivas más importantes de Elefante Marino del Sur en el Atlántico Sur.
 
 ### Datos modelados
 
@@ -201,7 +200,6 @@ Variables representadas:
 - Sea Surface Temperature (SST)
 - Chlorophyll-a
 
-【1-141d2a】【2-4f9315】
 
 ---
 
@@ -229,7 +227,7 @@ Rank beaches by total haul-out count in 2023
 Which datasets underpin the 2019 census?
 ```
 
-Estas consultas forman parte del benchmark **MVB-500**, desarrollado para la evaluación experimental del sistema. 【1-141d2a】【2-4f9315】
+Estas consultas forman parte del benchmark **MVB-500**, desarrollado para la evaluación experimental del sistema. 
 
 ---
 
@@ -244,7 +242,6 @@ Evaluación sobre el benchmark **MVB-500**:
 | GraphRAG-NoIntent | 88.1% | 0.82 | 74.0% | 5.2% |
 | **Visual Ocean Explorer** | **93.6%** | **0.87** | **96.2%** | **2.8%** |
 
-【2-4f9315】
 
 ---
 
@@ -268,7 +265,6 @@ Resultados destacados:
 - Menor carga cognitiva (NASA-TLX).
 - Alta valoración de la adecuación de las visualizaciones.
 
-【2-4f9315】
 
 ---
 
@@ -283,7 +279,6 @@ Resultados destacados:
 - Leaflet
 - OpenStreetMap
 
-【1-141d2a】
 
 ---
 
@@ -295,7 +290,7 @@ Clonar el repositorio y abrir:
 index.html
 ```
 
-La demostración funciona completamente en el navegador y no requiere backend, ya que la base de conocimiento simulada se encuentra embebida en la aplicación. 【1-141d2a】
+La demostración funciona completamente en el navegador y no requiere backend, ya que la base de conocimiento simulada se encuentra embebida en la aplicación.
 
 ---
 
@@ -303,7 +298,7 @@ La demostración funciona completamente en el navegador y no requiere backend, y
 
 > Visual Ocean Explorer: Automating Chart Selection over Linked Marine Data through Ontological Intent
 
-El trabajo presenta una arquitectura que integra GraphRAG, validación SPARQL, control de calidad y selección determinística de gráficos para análisis visual reproducible sobre Knowledge Graphs marinos. 【2-4f9315】
+El trabajo presenta una arquitectura que integra GraphRAG, validación SPARQL, control de calidad y selección determinística de gráficos para análisis visual reproducible sobre Knowledge Graphs marinos.
 
 ---
 
